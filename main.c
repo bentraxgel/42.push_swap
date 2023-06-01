@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/01 19:56:07 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/01 20:00:50 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	parsing(t_stack *stack, char **argv)
 	stack->b = (int *)ft_calloc(stack->a_len + 1, sizeof(int));
 	stack->command = ft_lstnew("start\n");
 }
-//파싱 잘 되는건 확인 완료
+//파싱 잘 되는건 확인 완료!
 int	main(int argc, char *argv[])
 {
 	// atexit(leaks); //TODO del
