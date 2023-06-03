@@ -6,13 +6,13 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/03 22:29:33 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/03 23:13:03 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	save_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
+void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 {
 	int	*arr;
 
