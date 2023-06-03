@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 19:38:36 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/03 22:38:02 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,15 @@ typedef struct s_stack
 
 typedef struct s_info
 {
+	size_t	p0;
 	size_t	p1;
 	size_t	p2;
 	size_t	ra; //TODO size_t로 변환
 	size_t	rb;
 	size_t	pa;
 	size_t	pb;
+	size_t	a;
+	size_t	b;
 } t_info;
 
 //main.c
