@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 11:31:41 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/03 19:38:36 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,12 @@ typedef struct s_stack
 
 typedef struct s_info
 {
-	int	p0;
-	int	p1;
-	int p2;
-	int ra; //TODO size_t로 변환
-	int	rb;
-	int	pa;
-	int	pb;
-	int	a;
-	int	b;
-	int	num;
-	size_t rem;
-	int a_sort; //TODO del
-	int	b_sort;
+	size_t	p1;
+	size_t	p2;
+	size_t	ra; //TODO size_t로 변환
+	size_t	rb;
+	size_t	pa;
+	size_t	pb;
 } t_info;
 
 //main.c
@@ -113,6 +106,7 @@ int getPivot(int data[], int start, int end);
 //TODO 노미넷 여기까지
 
 //sort_three.c
+void	three_sort(t_stack *stack, t_info *info, t_set flag, size_t num);
 void	a_three_only(t_stack *stack, t_info *info, size_t top);
 void	a_three_another(t_stack *stack, t_info *info, size_t top);
 void	b_three_only(t_stack *stack, t_info *info, size_t top);

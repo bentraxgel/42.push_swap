@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 11:37:30 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/03 18:39:30 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	parsing(t_stack *stack, char **argv)
 		i++;
 	stack->a_len = i;
 	stack->b_len = 0;
-	stack->a = (int *)malloc(sizeof(int) * (i + 1));
+	stack->a = (int *)alloc_guard(sizeof(int), stack->a_len);
 	i = -1;
 	while (word[++i])
 		stack->a[stack->a_len - i - 1] = ft_atoi_pro(word[i]);
@@ -87,7 +87,7 @@ void	parsing(t_stack *stack, char **argv)
 	if (duplicate_check(stack->a, stack->a_len) == false)
 		my_error();
 	stack_indexing(stack, 0, stack->a_len);
-	stack->b = (int *)ft_calloc(stack->a_len + 1, sizeof(int));
+	stack->b = (int *)alloc_guard(sizeof(int), stack->a_len + 1);
 	stack->command = ft_lstnew("start\n");
 }
 //파싱 잘 되는건 확인 완료!
@@ -95,7 +95,6 @@ int	main(int argc, char *argv[])
 {
 	atexit(leaks); //TODO del
 	t_stack	stack;
-	// t_info	info;
 
 	if (argc == 1)
 		return (0);
