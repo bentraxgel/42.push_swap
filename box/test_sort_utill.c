@@ -3,32 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   test_sort_utill.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 23:14:53 by seok              #+#    #+#             */
-/*   Updated: 2023/05/31 18:50:27 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/03 10:49:39 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	two_sort(t_stack *stack, t_set flag, t_info *info)
-// {
-// 	if (flag == STACK_A)
-// 	{
-// 		if (stack->a[stack->a_len - 1] < stack->a[stack->a_len - 2])
-// 			return ;
-// 		else if (stack->a[stack->a_len - 1] > stack->a[stack->a_len - 2])
-// 			command(SA, stack, info);
-// 	}
-// 	else if (flag == STACK_B)
-// 	{
-// 		if (stack->b[stack->b_len - 1] < stack->b[stack->b_len - 2])
-// 			return ;
-// 		else if (stack->b[stack->b_len - 1] > stack->b[stack->b_len - 2])
-// 			command(SB, stack, info);
-// 	}
-// }
 
 void	two_sort(t_stack *stack, t_set flag, t_info *info)
 {
@@ -127,7 +109,7 @@ void	hard_b_only(t_stack *stack, t_info *info, size_t num)
 			printf("a[%d] : %d\tv[%d] : %d\n", i, stack->a[i], i, stack->b[i]);
 	
 	//TODO THAT IS PROBLEM
-	if (a_sort_check(stack->a, stack->a_len) == TRUE && b_sort_check(stack->b, stack->b_len) == TRUE)
+	if (a_sort_check(stack->a, stack->a_len) == true && b_sort_check(stack->b, stack->b_len) == true)
 	{
 		printf("IN?");
 		while (info->b-- != 0){

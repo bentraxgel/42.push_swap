@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap copy.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 11:31:41 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/03 11:31:36 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+/*
 # define PUSH_SWAP_H
 
 #include "libft/libft.h"
 #include <stdio.h>
-#include <stdbool.h>
 
+# define TRUE 1
+# define FALSE 0
 typedef enum e_set
 {
 	STACK_A = 0,
@@ -40,9 +41,10 @@ typedef struct s_stack
 	t_list		*command;
 	int			*a;
 	int			*b;
+	int			*total; //이자식 없어도 될것같은데
 	size_t	a_len;
 	size_t	b_len;
-	size_t	total_len; //TODO del
+	size_t	total_len;
 } t_stack;
 
 typedef struct s_info
@@ -86,25 +88,25 @@ t_list	*rr_print(t_list *command);
 t_list	*s_print(t_list *command);
 void	print_command(t_list *command);
 
-// //TODO 노미넷 여기부터
-// //pivot.c //하기싫어ㅓㅓㅓㅓ
-// void	save_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
-// void	mini_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
-// void	reset_info(t_info *info);
-// 
-// //sort_stack.c
-// void	a_stack_sort(t_stack *stack, size_t num, t_info *info);
-// void	b_stack_sort(t_stack *stack, size_t num, t_info *info);
-// void	sort_rr(t_stack *stack, t_info *info);
-// void	mini_sort(t_stack *stack, t_info *info, size_t num, t_set flag);
-// void	hard_sort(t_stack *stack, size_t num, t_set flag);
-// ppp
-// //sort_utill.c
-// void	two_sort(t_stack *stack, t_set flag, t_info *info);
-// void	hard_a_only(t_stack *stack, t_info *info, size_t num);
-// void	hard_a_another(t_stack *stack, t_info *info, size_t num);
-// void	hard_b_only(t_stack *stack, t_info *info, size_t num);
-// void	hard_b_another(t_stack *stack, t_info *info, size_t num);
+//TODO 노미넷 여기부터
+//pivot.c //하기싫어ㅓㅓㅓㅓ
+void	save_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
+void	mini_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
+void	reset_info(t_info *info);
+
+//sort_stack.c
+void	a_stack_sort(t_stack *stack, size_t num, t_info *info);
+void	b_stack_sort(t_stack *stack, size_t num, t_info *info);
+void	sort_rr(t_stack *stack, t_info *info);
+void	mini_sort(t_stack *stack, t_info *info, size_t num, t_set flag);
+void	hard_sort(t_stack *stack, size_t num, t_set flag);
+
+//sort_utill.c
+void	two_sort(t_stack *stack, t_set flag, t_info *info);
+void	hard_a_only(t_stack *stack, t_info *info, size_t num);
+void	hard_a_another(t_stack *stack, t_info *info, size_t num);
+void	hard_b_only(t_stack *stack, t_info *info, size_t num);
+void	hard_b_another(t_stack *stack, t_info *info, size_t num);
 
 	//TODO del file
 void quickSort(int data[], int start, int end);
@@ -139,3 +141,4 @@ void	my_check_limit(long long num);
 int		ft_atoi_pro(const char *str);
 
 #endif
+*/
