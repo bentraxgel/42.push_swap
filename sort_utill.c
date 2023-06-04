@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/03 23:13:03 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/04 20:47:49 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,16 @@ void	sort_rr(t_stack *stack, t_info *info)
 		command(RRB, stack, info);
 		i++;
 		}
+}
+
+int	*ft_subnum(int *arr, size_t start, size_t num)
+{
+	int		*temp;
+	size_t	i;
+
+	i = -1;
+	temp = (int *)malloc(sizeof(int) * num);
+	while (++i < num)
+		temp[i] = arr[start + i];
+	return (temp);
 }

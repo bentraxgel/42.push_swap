@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 06:03:10 by seok              #+#    #+#             */
-/*   Updated: 2023/05/30 14:42:48 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/04 16:48:19 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	p_command(t_stack *stack, t_info *info, t_set flag)
 		stack->b_len++;
 		ft_lstadd_back(&stack->command, ft_lstnew("pb\n"));
 		info->pb++;
-		printf("\t>>>>>pb : %d\n", info->pb);
+		printf("\t>>>>>pb : %zu\n", info->pb);
 	}
 	else if (flag == STACK_A && stack->b_len > 0)
 	{

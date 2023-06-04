@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 18:39:30 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/04 21:14:29 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	parsing(t_stack *stack, char **argv)
 	if (duplicate_check(stack->a, stack->a_len) == false)
 		my_error();
 	stack_indexing(stack, 0, stack->a_len);
-	stack->b = (int *)alloc_guard(sizeof(int), stack->a_len + 1);
+	stack->b = (int *)alloc_guard(sizeof(int), stack->a_len);
 	stack->command = ft_lstnew("start\n");
 }
 //파싱 잘 되는건 확인 완료!

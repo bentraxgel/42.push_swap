@@ -39,8 +39,8 @@ void	my_check_limit(long long num)
 
 int	ft_atoi_pro(const char *str)
 {
-	int	sign;
-	int	result;
+	int			sign;
+	long long	result;
 
 	sign = 1;
 	result = 0;

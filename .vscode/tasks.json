@@ -7,7 +7,8 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "/Users/quesera/Desktop/push_swap/*.c`",
+                "/Users/quesera/Desktop/push_swap/libft/*.c`",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

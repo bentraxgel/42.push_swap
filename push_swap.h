@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 23:13:03 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/04 21:59:27 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 #include "libft/libft.h"
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h> //TODO del
 
 typedef enum e_set
 {
@@ -40,9 +40,9 @@ typedef struct s_stack
 	t_list		*command;
 	int			*a;
 	int			*b;
-	size_t	a_len;
-	size_t	b_len;
-	size_t	total_len; //TODO del
+	size_t		a_len;
+	size_t		b_len;
+	size_t		total_len; //TODO del
 } t_stack;
 
 typedef struct s_info
@@ -50,7 +50,7 @@ typedef struct s_info
 	size_t	p0;
 	size_t	p1;
 	size_t	p2;
-	size_t	ra; //TODO size_t로 변환
+	size_t	ra;
 	size_t	rb;
 	size_t	pa;
 	size_t	pb;
@@ -61,7 +61,6 @@ typedef struct s_info
 //main.c
 int	exception(char *str);
 
-
 //main_utill.c
 int		my_error();
 void	stack_indexing(t_stack *stack, size_t start, size_t len);
@@ -69,22 +68,40 @@ int		a_sort_check(int *arr, size_t len);
 int		b_sort_check(int *arr, size_t len);
 int		duplicate_check(int *arr, size_t len);
 
-//command.c
-int		command(t_cmd cmd, t_stack *stack, t_info *info);
-void	r_command(t_stack *stack, t_info *info, t_set flag, size_t top);
-void	rr_command(t_stack *stack, t_set flag, size_t top);
-void	p_command(t_stack *stack, t_info *info, t_set flag);
-void	s_command(t_stack *stack, t_set flag);
+//tools
+void	*alloc_guard(size_t typesize, size_t count);
 
-//print.c
-t_list	*r_print(t_list *command);
-t_list	*rr_print(t_list *command);
-t_list	*s_print(t_list *command);
-void	print_command(t_list *command);
+//ft_atoi_pro.c
+int		ft_isspace_pro(int c);
+void	my_check_digit(const char *str);
+void	my_check_limit(long long num);
+int		ft_atoi_pro(const char *str);
 
+//sort_stack.c
+void	a_stack_sort(t_stack *stack, size_t num);
+void	b_stack_sort(t_stack *stack, size_t num);
+
+//sort_utill.c
+void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag);
+void	sort_rr(t_stack *stack, t_info *info);
+int		*ft_subnum(int *arr, size_t start, size_t num);
+
+//hard_sort.c
+void	hard_sort(t_stack *stack, t_set flag, size_t num);
+void	two_sort(t_stack *stack, t_info *hard, t_set flag);
+void	mini_sort(t_stack *stack, t_info *hard, size_t flag, size_t num);
+void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag);
+
+//hard_sort2.c
+void	a_large_only(t_stack *stack, size_t num);
+void	a_large_another(t_stack *stack, size_t num);
+void	b_large_only(t_stack *stack, size_t num);
+void	b_large_another(t_stack *stack, size_t num);
+
+/*
 // //TODO 노미넷 여기부터
 // //pivot.c //하기싫어ㅓㅓㅓㅓ
-void	two_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
+// void	two_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
 // void	mini_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
 // void	reset_info(t_info *info);
 // 
@@ -105,8 +122,8 @@ void	two_pivot(t_stack *stack, t_info *info, t_set flag, size_t num);
 	//TODO del file
 void quickSort(int data[], int start, int end);
 int getPivot(int data[], int start, int end);
-
 //TODO 노미넷 여기까지
+*/
 
 //sort_three.c
 void	three_sort(t_stack *stack, t_info *info, t_set flag, size_t num);
@@ -129,10 +146,16 @@ void	b_third_case(t_stack *stack, t_info *info);
 void	b_fourth_case(t_stack *stack, t_info *info);
 void	b_fifth_case(t_stack *stack, t_info *info);
 
-//ft_atoi_pro.c
-int		ft_isspace_pro(int c);
-void	my_check_digit(const char *str);
-void	my_check_limit(long long num);
-int		ft_atoi_pro(const char *str);
+//command.c
+int		command(t_cmd cmd, t_stack *stack, t_info *info);
+void	r_command(t_stack *stack, t_info *info, t_set flag, size_t top);
+void	rr_command(t_stack *stack, t_set flag, size_t top);
+void	p_command(t_stack *stack, t_info *info, t_set flag);
+void	s_command(t_stack *stack, t_set flag);
 
+//print.c
+t_list	*r_print(t_list *command);
+t_list	*rr_print(t_list *command);
+t_list	*s_print(t_list *command);
+void	print_command(t_list *command);
 #endif
