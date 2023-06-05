@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:44:07 by seok              #+#    #+#             */
-/*   Updated: 2023/06/04 20:57:16 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:37:21 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,6 @@ void	hard_sort(t_stack *stack, t_set flag, size_t num)
 	}
 }
 
-void	two_sort(t_stack *stack, t_info *hard, t_set flag)
-{
-	if (flag == STACK_A)
-	{
-		if (stack->a[stack->a_len - 1] < stack->a[stack->a_len - 2])
-			return ;
-		else if (stack->a[stack->a_len - 1] > stack->a[stack->a_len - 2])
-			command(SA, stack, hard);
-	}
-	else if (flag == STACK_B)
-	{
-		if (stack->b[stack->b_len - 1] > stack->b[stack->b_len - 2])
-			return ;
-		else if (stack->b[stack->b_len - 1] < stack->b[stack->b_len - 2])
-			command(SB, stack, hard);
-	}
-}
-
 void	mini_sort(t_stack *stack, t_info *hard, size_t flag, size_t num)
 {
 	if (num == 1)
@@ -77,6 +59,24 @@ void	mini_sort(t_stack *stack, t_info *hard, size_t flag, size_t num)
 			else
 				b_three_another(stack, hard, stack->b_len - 1);
 		}
+	}
+}
+
+void	two_sort(t_stack *stack, t_info *hard, t_set flag)
+{
+	if (flag == STACK_A)
+	{
+		if (stack->a[stack->a_len - 1] < stack->a[stack->a_len - 2])
+			return ;
+		else if (stack->a[stack->a_len - 1] > stack->a[stack->a_len - 2])
+			command(SA, stack, hard);
+	}
+	else if (flag == STACK_B)
+	{
+		if (stack->b[stack->b_len - 1] > stack->b[stack->b_len - 2])
+			return ;
+		else if (stack->b[stack->b_len - 1] < stack->b[stack->b_len - 2])
+			command(SB, stack, hard);
 	}
 }
 

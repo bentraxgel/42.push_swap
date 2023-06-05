@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/04 21:59:27 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/05 04:10:51 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int		b_sort_check(int *arr, size_t len);
 int		duplicate_check(int *arr, size_t len);
 
 //tools
+void	lst_del(t_list *lst);
 void	*alloc_guard(size_t typesize, size_t count);
 
 //ft_atoi_pro.c

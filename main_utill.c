@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_utill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 14:36:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 18:40:12 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/05 03:55:05 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	stack_indexing(t_stack *stack, size_t start, size_t len)
 	int		*tmp;
 
 	i = 0;
-	tmp = alloc_guard(len + 1, sizeof(int));
+	tmp = alloc_guard(sizeof(int), len + 1);
 	while(i < len)
 	{
 		j = 0;

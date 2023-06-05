@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/03 23:13:03 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/05 03:08:54 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	a_stack_sort(t_stack *stack, size_t num)
 	size_t	i;
 	t_info	info;
 
-	i = -1;
 	a_sort_check(stack->a, stack->a_len);
 	if (num <= 6)
 	{
@@ -25,14 +24,15 @@ void	a_stack_sort(t_stack *stack, size_t num)
 		return ;
 	}
 	two_pivot(stack, &info, num, STACK_A);
-	while (++i < stack->a_len)
+	i = 0;
+	while (i++ < stack->a_len)
 	{
-		if (stack->a[stack->a_len - i] > info.p2)
+		if (stack->a[stack->a_len - 1] > info.p2)
 			command(RA, stack, &info);
 		else
 		{
 			command(PB, stack, &info);
-			if (stack->a[stack->a_len - i] <= info.p1)
+			if (stack->a[stack->a_len - 1] <= info.p1)
 				command(RB, stack, &info);
 		}
 	}
@@ -47,16 +47,27 @@ void	b_stack_sort(t_stack *stack, size_t num)
 	size_t	i;
 	t_info	info;
 
-	i = -1;
 	b_sort_check(stack->b, stack->b_len);
 	if (num <= 6)
 	{
-		hard_sort(stack, &info, STACK_B, num);
+		hard_sort(stack, STACK_B, num);
 		return ;
 	}
 	two_pivot(stack, &info, num, STACK_B);
-	while (++i < stack->b_len)
+	i = 0;
+	while (i++ < stack->b_len)
 	{
-
+		if (stack->b[stack->b_len - 1] <= info.p1)
+			command(RB, stack, &info);
+		else
+		{
+			command(PA, stack, &info);
+			if (stack->b[stack->b_len - 1] <= info.p2)
+				command(RA, stack, &info);
+		}
 	}
+	a_stack_sort(stack, info.pa - info.ra);
+	sort_rr(stack, &info);
+	a_stack_sort(stack, info.ra);
+	b_stack_sort(stack, info.rb);
 }

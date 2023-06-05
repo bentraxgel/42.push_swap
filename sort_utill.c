@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/04 20:47:49 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/05 02:28:49 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 
 	if (flag == STACK_A)
 	{
-		arr = ft_substr(stack->a, stack->a_len - num, num);
+		arr = ft_subnum(stack->a, stack->a_len - num, num);
 		q_sort(arr);
 		info->p1 = arr[stack->a_len / 3];
 		info->p2 = arr[stack->a_len / 3 * 2];
 	}
 	else
 	{
-		arr = ft_substr(stack->a, stack->a_len - num, num);
+		arr = ft_subnum(stack->a, stack->a_len - num, num);
 		q_sort(arr);
 		info->p1 = arr[stack->a_len / 3];
 		info->p2 = arr[stack->a_len / 3 * 2];
@@ -44,7 +44,6 @@ void	sort_rr(t_stack *stack, t_info *info)
 	i = -1;
 	while (++i < info->ra && i < info->rb)
 	{
-		// printf("i : %zu\tra : %d\trb : %d\n", i, info->ra, info->rb);
 		command(RRA, stack, info);
 		command(RRB, stack, info);
 	}

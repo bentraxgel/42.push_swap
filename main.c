@@ -6,22 +6,13 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/04 21:14:29 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/05 03:17:00 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <stdio.h> //TODO : 지워야징
-
-void	ft_del(t_list *lst)
-{
-	while (lst != NULL)
-	{
-		free(lst);
-		lst = lst->next;
-	}
-}
 
 void	leaks()
 {
@@ -116,6 +107,6 @@ int	main(int argc, char *argv[])
 	// print_command(stack.command);
 	free(stack.a);
 	free(stack.b);
-	ft_del(stack.command);
+	lst_del(stack.command);
 	return (0);
 }

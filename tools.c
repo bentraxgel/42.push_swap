@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 18:05:40 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 18:39:18 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/05 03:17:00 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	lst_del(t_list *lst)
+{
+	while (lst != NULL)
+	{
+		free(lst);
+		lst = lst->next;
+	}
+}
 
 void	*alloc_guard(size_t typesize, size_t count)
 {
