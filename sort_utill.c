@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/05 02:28:49 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/07 03:52:48 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,22 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 	if (flag == STACK_A)
 	{
 		arr = ft_subnum(stack->a, stack->a_len - num, num);
-		q_sort(arr);
+		q_sort(stack->a, 0, stack->a_len - 1);
 		info->p1 = arr[stack->a_len / 3];
 		info->p2 = arr[stack->a_len / 3 * 2];
 	}
 	else
 	{
-		arr = ft_subnum(stack->a, stack->a_len - num, num);
-		q_sort(arr);
-		info->p1 = arr[stack->a_len / 3];
-		info->p2 = arr[stack->a_len / 3 * 2];
+		arr = ft_subnum(stack->b, stack->b_len - num, num);
+		q_sort(stack->b, 0, stack->b_len - 1);
+		info->p1 = arr[stack->b_len / 3];
+		info->p2 = arr[stack->b_len / 3 * 2];
 	}
 	info->ra = 0;
 	info->rb = 0;
 	info->pa = 0;
 	info->pb = 0;
+	printf("p1 : %zu\tp2 : %zu\n", info->p1, info->p2);
 }
 
 void	sort_rr(t_stack *stack, t_info *info)
@@ -52,10 +53,11 @@ void	sort_rr(t_stack *stack, t_info *info)
 		command(RRA, stack, info);
 		i++;
 	}
-	while (i < info->rb){
+	while (i < info->rb)
+	{
 		command(RRB, stack, info);
 		i++;
-		}
+	}
 }
 
 int	*ft_subnum(int *arr, size_t start, size_t num)

@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 14:36:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/05 03:55:05 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/06 14:47:26 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,6 @@ void	stack_indexing(t_stack *stack, size_t start, size_t len)
 	free(tmp);
 }
 
-int	b_sort_check(int *arr, size_t len)
-{
-	printf("b_sort_check\n");
-	size_t	i;
-
-	i = 0;
-	while (i + 1 < len)
-	{
-		if (arr[i] + 1 == arr[i + 1])
-			i++;
-		else
-			return (false);
-	}
-	printf("\t\tTRUE\n");
-	return (true);
-}
-
 int	a_sort_check(int *arr, size_t len)
 {
 	printf("a_sort_check\n");
@@ -70,6 +53,23 @@ int	a_sort_check(int *arr, size_t len)
 	while (i < len)
 	{
 		if (arr[len - i] + 1 == arr[len - i - 1])
+			i++;
+		else
+			return (false);
+	}
+	printf("\t\tTRUE\n");
+	return (true);
+}
+
+int	b_sort_check(int *arr, size_t len)
+{
+	printf("b_sort_check\n");
+	size_t	i;
+
+	i = 0;
+	while (i + 1 < len)
+	{
+		if (arr[i] + 1 == arr[i + 1])
 			i++;
 		else
 			return (false);

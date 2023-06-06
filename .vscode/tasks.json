@@ -7,10 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "/Users/quesera/Desktop/push_swap/*.c`",
-                "/Users/quesera/Desktop/push_swap/libft/*.c`",
+                "/Users/quesera/Desktop/push_swap/*.c",
+                "/Users/quesera/Desktop/push_swap/libft/*.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "/Users/quesera/Desktop/push_swap/push_swap"
             ],
             "options": {
                 "cwd": "${fileDirname}"

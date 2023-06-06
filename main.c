@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/05 03:17:00 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/07 03:45:18 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@
 void	leaks()
 {
 	system("leaks -q a.out");
-}
-
-int	exception(char *str)
-{
-	int	i;
-	int	ret;
-
-	i = 0;
-	ret = 0;
-	while (str[i])
-		ret += ft_isdigit(str[i++]);
-	return (ret);
 }
 
 char	*join_argv(char **argv)
@@ -67,6 +55,7 @@ void	parsing(t_stack *stack, char **argv)
 	while (word[i])
 		i++;
 	stack->a_len = i;
+	stack->total_len = i; //TODO DEL
 	stack->b_len = 0;
 	stack->a = (int *)alloc_guard(sizeof(int), stack->a_len);
 	i = -1;
@@ -93,9 +82,14 @@ int	main(int argc, char *argv[])
 	printf("a_len = %zu\n", stack.a_len);
 	for (int i = stack.a_len - 1; i >= 0; i--)
 		printf("a[%d] : %d\n", i, stack.a[i]);
+	for (int i = stack.total_len - 1; i >= 0; i--)
+		printf("a[%d] : %d\tb[%d] : %d\n", i, stack.a[i], i, stack.b[i]);
+
 /*
 	이제 여기서 sort해야함......!!
 */
+	a_stack_sort(&stack, stack.a_len);
+	print_command(stack.command);
 	// save_pivot(&stack, &info, STACK_A, stack.a_len);
 	// a_stack_sort(&stack, stack.a_len, &info);
 	// // func(stack.command);

@@ -4,9 +4,9 @@
 		"type": "lldb",
 		"request": "launch",
 		"name": "Launch",
-		"program": "${workspaceFolder}/a.out",
+		"program": "${workspaceFolder}/push_swap",
 		"args": [
-			"123 4"
+			"012 -1  -8 80 678 257986543 -98764 0"
 		],
 		"cwd": "${workspaceFolder}"
 	}

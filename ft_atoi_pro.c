@@ -46,7 +46,7 @@ int	ft_atoi_pro(const char *str)
 	result = 0;
 	while (ft_isspace_pro(*str))
 		str++;
-	// my_check_digit(str);
+	my_check_digit(str);
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')

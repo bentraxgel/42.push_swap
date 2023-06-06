@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:44:07 by seok              #+#    #+#             */
-/*   Updated: 2023/06/04 23:37:21 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/07 03:31:49 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ void	two_sort(t_stack *stack, t_info *hard, t_set flag)
 
 void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag)
 {
-	char	*arr;
+	int	*arr;
 
 	if (flag == STACK_A)
 	{
 		arr = ft_subnum(stack->a, stack->a_len - num, num);
-		q_sort(arr);
+		q_sort(arr, stack->a_len - num, stack->a_len - 1);
 		if (num == 4)
 			hard->p0 = arr[1];
 		else
@@ -96,7 +96,7 @@ void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag)
 	else
 	{
 		arr = ft_subnum(stack->b, stack->b_len - num, num);
-		q_sort(arr);
+		q_sort(arr, stack->b_len - num, stack->b_len - 1);
 		if (num == 6)
 			hard->p0 = arr[2];
 		else
