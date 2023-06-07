@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/05 03:08:54 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/07 12:59:51 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void	a_stack_sort(t_stack *stack, size_t num)
 		}
 	}
 	sort_rr(stack, &info);
+	printf("\t1^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	a_stack_sort(stack, info.ra);
+	printf("\t2^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	b_stack_sort(stack, info.rb);
+	printf("\t3^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	b_stack_sort(stack, info.pb - info.rb);
 }
 
