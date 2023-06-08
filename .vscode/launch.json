@@ -6,7 +6,7 @@
 		"name": "Launch",
 		"program": "${workspaceFolder}/push_swap",
 		"args": [
-			"012 -1  -8 80 678 257986543 -98764 0"
+			"012 -1  -8 80 678 257986543 -98764"
 		],
 		"cwd": "${workspaceFolder}"
 	}

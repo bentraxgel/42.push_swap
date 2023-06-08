@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/07 03:44:46 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 04:03:33 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct s_info
 	size_t	a;
 	size_t	b;
 } t_info;
-
+void q_sort(int arr[], int L, int R);
 //main.c
 char	*join_argv(char **argv);
 void	parsing(t_stack *stack, char **argv);

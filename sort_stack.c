@@ -6,7 +6,7 @@
 /*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/07 12:59:51 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 05:07:13 by quesera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	a_stack_sort(t_stack *stack, size_t num)
 {
 	size_t	i;
+	size_t	target;
 	t_info	info;
 
-	a_sort_check(stack->a, stack->a_len);
+	if (a_sort_check(stack->a, stack->a_len) == true)
+		return ;
 	if (num <= 6)
 	{
 		hard_sort(stack, STACK_A, num);
@@ -25,14 +27,15 @@ void	a_stack_sort(t_stack *stack, size_t num)
 	}
 	two_pivot(stack, &info, num, STACK_A);
 	i = 0;
-	while (i++ < stack->a_len)
+	while (i++ < num)
 	{
-		if (stack->a[stack->a_len - 1] > info.p2)
+		target = stack->a[stack->a_len - 1];
+		if (target > info.p2)
 			command(RA, stack, &info);
 		else
 		{
 			command(PB, stack, &info);
-			if (stack->a[stack->a_len - 1] <= info.p1)
+			if (target > info.p1)
 				command(RB, stack, &info);
 		}
 	}
@@ -48,9 +51,11 @@ void	a_stack_sort(t_stack *stack, size_t num)
 void	b_stack_sort(t_stack *stack, size_t num)
 {
 	size_t	i;
+	size_t	target;
 	t_info	info;
 
-	b_sort_check(stack->b, stack->b_len);
+	if (b_sort_check(stack->b, stack->b_len) == true)
+		return ;
 	if (num <= 6)
 	{
 		hard_sort(stack, STACK_B, num);
@@ -58,14 +63,15 @@ void	b_stack_sort(t_stack *stack, size_t num)
 	}
 	two_pivot(stack, &info, num, STACK_B);
 	i = 0;
-	while (i++ < stack->b_len)
+	while (i++ < num)
 	{
-		if (stack->b[stack->b_len - 1] <= info.p1)
+		target = stack->b[stack->b_len - 1];
+		if (target <= info.p1)
 			command(RB, stack, &info);
 		else
 		{
 			command(PA, stack, &info);
-			if (stack->b[stack->b_len - 1] <= info.p2)
+			if (target <= info.p2)
 				command(RA, stack, &info);
 		}
 	}
