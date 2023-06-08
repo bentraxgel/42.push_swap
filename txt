@@ -1,258 +1,401 @@
-9 7 1 4 10 3 6 2 5 8 
-[sort_stack.c:17][a_stack_sort]
-num : 10
-a_sort_check
->>>  >>  subnum
-temp[0] : 8	8
-temp[1] : 5	5
-temp[2] : 2	2
-temp[3] : 6	6
-temp[4] : 3	3
-temp[5] : 10	10
-temp[6] : 4	4
-temp[7] : 1	1
-temp[8] : 7	7
-temp[9] : 9	9
-arr[0] : 1
-arr[1] : 2
-arr[2] : 3
-arr[3] : 4
-arr[4] : 5
-arr[5] : 6
-arr[6] : 7
-arr[7] : 8
-arr[8] : 9
-arr[9] : 10
-[p1] : 3	[p2] : 6
-p1 : 4	p2 : 7
-RA
-<<<command>>>
-a[9] : 7	b[9] : 0
-a[8] : 1	b[8] : 0
-a[7] : 4	b[7] : 0
-a[6] : 10	b[6] : 0
-a[5] : 3	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 2	b[3] : 0
-a[2] : 5	b[2] : 0
-a[1] : 8	b[1] : 0
-a[0] : 9	b[0] : 0
-a_len : 10	b_len : 0
-PB
-	>>>>>pb : 1
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 1	b[8] : 0
-a[7] : 4	b[7] : 0
-a[6] : 10	b[6] : 0
-a[5] : 3	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 2	b[3] : 0
-a[2] : 5	b[2] : 0
-a[1] : 8	b[1] : 0
-a[0] : 9	b[0] : 7
-a_len : 9	b_len : 1
-PB
-	>>>>>pb : 2
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 4	b[7] : 0
-a[6] : 10	b[6] : 0
-a[5] : 3	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 2	b[3] : 0
-a[2] : 5	b[2] : 0
-a[1] : 8	b[1] : 1
-a[0] : 9	b[0] : 7
-a_len : 8	b_len : 2
-PB
-	>>>>>pb : 3
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 10	b[6] : 0
-a[5] : 3	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 2	b[3] : 0
-a[2] : 5	b[2] : 4
-a[1] : 8	b[1] : 1
-a[0] : 9	b[0] : 7
-a_len : 7	b_len : 3
-RA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 3	b[6] : 0
-a[5] : 6	b[5] : 0
-a[4] : 2	b[4] : 0
-a[3] : 5	b[3] : 0
-a[2] : 8	b[2] : 4
-a[1] : 9	b[1] : 1
-a[0] : 10	b[0] : 7
-a_len : 7	b_len : 3
-PB
-	>>>>>pb : 4
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 6	b[5] : 0
-a[4] : 2	b[4] : 0
-a[3] : 5	b[3] : 3
-a[2] : 8	b[2] : 4
-a[1] : 9	b[1] : 1
-a[0] : 10	b[0] : 7
-a_len : 6	b_len : 4
-PB
-	>>>>>pb : 5
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 0	b[5] : 0
-a[4] : 2	b[4] : 6
-a[3] : 5	b[3] : 3
-a[2] : 8	b[2] : 4
-a[1] : 9	b[1] : 1
-a[0] : 10	b[0] : 7
-a_len : 5	b_len : 5
-RB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 0	b[5] : 0
-a[4] : 2	b[4] : 3
-a[3] : 5	b[3] : 4
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 7
-a[0] : 10	b[0] : 6
-a_len : 5	b_len : 5
-PB
-	>>>>>pb : 6
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 0	b[5] : 2
-a[4] : 0	b[4] : 3
-a[3] : 5	b[3] : 4
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 7
-a[0] : 10	b[0] : 6
-a_len : 4	b_len : 6
-PB
-	>>>>>pb : 7
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 5
-a[5] : 0	b[5] : 2
-a[4] : 0	b[4] : 3
-a[3] : 0	b[3] : 4
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 7
-a[0] : 10	b[0] : 6
-a_len : 3	b_len : 7
-RB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 2
-a[5] : 0	b[5] : 3
-a[4] : 0	b[4] : 4
-a[3] : 0	b[3] : 1
-a[2] : 8	b[2] : 7
-a[1] : 9	b[1] : 6
-a[0] : 10	b[0] : 5
-a_len : 3	b_len : 7
-RA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 2
-a[5] : 0	b[5] : 3
-a[4] : 0	b[4] : 4
-a[3] : 0	b[3] : 1
-a[2] : 9	b[2] : 7
-a[1] : 10	b[1] : 6
-a[0] : 8	b[0] : 5
-a_len : 3	b_len : 7
-sort_rr
-RRA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 2
-a[5] : 0	b[5] : 3
-a[4] : 0	b[4] : 4
-a[3] : 0	b[3] : 1
-a[2] : 8	b[2] : 7
-a[1] : 9	b[1] : 6
-a[0] : 10	b[0] : 5
-a_len : 3	b_len : 7
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 5
-a[5] : 0	b[5] : 2
-a[4] : 0	b[4] : 3
-a[3] : 0	b[3] : 4
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 7
-a[0] : 10	b[0] : 6
-a_len : 3	b_len : 7
-RRA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 5
-a[5] : 0	b[5] : 2
-a[4] : 0	b[4] : 3
-a[3] : 0	b[3] : 4
-a[2] : 10	b[2] : 1
-a[1] : 8	b[1] : 7
-a[0] : 9	b[0] : 6
-a_len : 3	b_len : 7
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 6
-a[5] : 0	b[5] : 5
-a[4] : 0	b[4] : 2
-a[3] : 0	b[3] : 3
-a[2] : 10	b[2] : 4
-a[1] : 8	b[1] : 1
-a[0] : 9	b[0] : 7
-a_len : 3	b_len : 7
-RRA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 6
-a[5] : 0	b[5] : 5
-a[4] : 0	b[4] : 2
-ara
+OK
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+ra
+ra
+pb
+rb
 pb
 pb
 pb
+rb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+ra
+pb
+rb
+pb
+ra
+pb
+pb
+rb
+pb
+ra
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+rb
+ra
+pb
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+pb
+pb
+pb
+ra
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+rb
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+ra
+pb
+rb
+pb
+pb
+pb
+pb
+rb
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+pb
+rb
+pb
+rb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+pb
+pb
+ra
+ra
+pb
+rb
+pb
+pb
+pb
+rb
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+ra
+pb
+pb
+pb
+pb
+rb
+pb
+ra
+pb
+pb
+rb
+ra
+pb
+rb
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrb
+pb
+ra
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+ra
+pb
+rrr
+rrr
+rrr
+ra
+pa
+pa
+pa
+rb
+pa
+rrb
+rb
+sb
+rrb
+pb
+pa
+pa
+pa
+pa
+rb
+pa
+rr
+rb
+pa
+ra
+pa
+rb
+pa
+ra
+pa
+pa
+pa
+ra
+ra
+pb
+rra
+rra
+ra
+pb
+pb
+rb
+rra
+pa
+rrb
+pa
+pa
+rrr
+rrr
+rrr
+rrb
+ra
+ra
+pb
+rra
+rra
+pa
+rb
+pa
+rrb
+sb
+pb
+pa
+pa
+pa
+pa
+pa
+rr
+rb
+rb
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+rb
+rb
+ra
+ra
+pb
+rra
+rra
+pa
+rrr
+rrr
+rrr
+rrr
+rrb
+pb
+ra
+pb
+pb
+rra
+pa
+pa
+pa
+rb
+rb
+rb
+pa
+pa
+rrb
+rrb
+rrb
+sa
+pa
+pa
+rb
+pb
+pb
+rrb
+pb
+pb
+pa
+pa
+pa
+pa
+pa
+pa
+rr
+rb
+pa
+ra
+pa
+pa
+rb
+rb
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+rr
+rb
+rb
+pa
+rr
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+rr
+rb
+rb
+pa
+pa
+ra
+pa
+pa
+rb
+pa
+ra
+pb
+pb
+rb
+pb
+ra
 ra
 pb
 pb
@@ -260,279 +403,321 @@ rb
 pb
 pb
 rb
+ra
+rrr
+rrr
+rrr
+sa
+pa
+pa
+rb
+sa
+pb
+pb
+rrb
+pa
+pa
+pa
+rb
+pa
+rrb
+pa
+pa
+rb
+sa
+pb
+pb
+rrb
+pb
+pa
+pa
+pa
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrb
+ra
+ra
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+ra
+pb
+pb
+pb
+rb
+rrr
+rrr
+rrr
+rra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+pa
+sb
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+rr
+pa
+rr
+pa
+rr
+pa
+pa
+ra
+pa
+rb
+rb
+ra
+sa
+rra
+rrr
+rrr
+rrr
+rrr
+rrb
+pb
+ra
+ra
+pb
+rra
+rra
+pa
+pa
+rb
+rb
+pa
+pa
+rrb
+rrb
+pa
+pa
+rb
+sa
+pb
+pb
+rrb
+pb
+pb
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+rb
+rb
+pa
+rr
+rb
+pa
+rr
+pa
+pa
+rb
+pa
+rr
+rb
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+rb
+pa
+ra
+pa
+pa
+rr
+pa
+rr
+pa
+pa
+ra
+pa
+pa
+rb
+pa
+ra
+pb
+ra
+ra
+pb
+rb
+pb
+pb
+pb
+rb
+ra
+pb
+rb
+pb
 ra
 rrr
 rrr
 rrr
 rra
-pa
-pa
-pa
+ra
+ra
+pb
+rra
+rra
+ra
+sa
+rra
 pa
 sb
+pa
+pa
+pa
+rb
+pa
+rrb
+pa
+pa
+rb
+pb
+pb
+rrb
+pb
+pa
+pa
+pa
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrb
+pb
+rb
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+rb
+pb
+rb
+pb
+rrr
+rrr
+rrr
+rra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+pa
+pa
+rb
+pb
+sb
+rrb
+pa
+pa
+pa
+rb
+rb
+pa
+rrb
+rrb
+pa
+pa
+rb
+sa
+pb
+pb
+rrb
+pb
+pa
+pa
+pa
+pa
+pa
+rr
+pa
+ra
+pa
+pa
+rr
+rb
+rb
+pa
+pa
+rb
+pa
+ra
+ra
+sa
+rra
+rrr
+rrr
+rrr
+rrr
+rrb
+ra
+pb
+rra
+ra
+pb
+pb
+rra
+pa
+pa
+pa
+pa
+pa
+rb
 rrb
 pb
 rrb
+pb
 rrb
 pa
 pa
 pa
 pa
-Process:         push_swap [26881]
-Path:            /Volumes/VOLUME/*/push_swap
-Load Address:    0x109501000
-Identifier:      push_swap
-Version:         ???
-Code Type:       X86-64
-Parent Process:  zsh [43782]
-
-Date/Time:       2023-06-08 22:47:38.751 +0900
-Launch Time:     2023-06-08 22:47:38.369 +0900
-OS Version:      Mac OS X 10.15.7 (19H15)
-Report Version:  7
-Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
-Analysis Tool Version:  Xcode 12.3 (12C33)
-
-Physical footprint:         328K
-Physical footprint (peak):  328K
-----
-
-leaks Report Version: 3.0
-Process 26881: 156 nodes malloced for 12 KB
-Process 26881: 0 leaks for 0 total leaked bytes.
-
-[3] : 0	b[3] : 3
-a[2] : 9	b[2] : 4
-a[1] : 10	b[1] : 1
-a[0] : 8	b[0] : 7
-a_len : 3	b_len : 7
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 7
-a[5] : 0	b[5] : 6
-a[4] : 0	b[4] : 5
-a[3] : 0	b[3] : 2
-a[2] : 9	b[2] : 3
-a[1] : 10	b[1] : 4
-a[0] : 8	b[0] : 1
-a_len : 3	b_len : 7
-	1^ pb : 7	rb : 3 = 4
-[sort_stack.c:17][a_stack_sort]
-num : 3
-a_sort_check
-[hard_sort.c:17][hard_sort]
-[hard_sort.c:43][mini_sort]
-a_sort_check
-
-	a_three_only
-RRA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 7
-a[5] : 0	b[5] : 6
-a[4] : 0	b[4] : 5
-a[3] : 0	b[3] : 2
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 1
-a_len : 3	b_len : 7
-miniEND
-	2^ pb : 7	rb : 3 = 4
-[sort_stack.c:59][b_stack_sort]
-num : 3
-b_sort_check
-		TRUE
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 0	b[5] : 6
-a[4] : 0	b[4] : 5
-a[3] : 7	b[3] : 2
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 1
-a_len : 4	b_len : 6
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 0	b[5] : 0
-a[4] : 6	b[4] : 5
-a[3] : 7	b[3] : 2
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 1
-a_len : 5	b_len : 5
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 2
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 1
-a_len : 6	b_len : 4
-b_check : END
-	3^ pb : 7	rb : 3 = 4
-[sort_stack.c:59][b_stack_sort]
-num : 4
-b_sort_check
-b_mini
-[hard_sort.c:17][hard_sort]
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 2	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 1
-a_len : 7	b_len : 3
-[hard_sort.c:43][mini_sort]
-[hard_sort.c:43][mini_sort]
-b_sort_check
-
-	b_three_only
-SB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 2	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 4
-a[1] : 9	b[1] : 3
-a[0] : 10	b[0] : 1
-a_len : 7	b_len : 3
-only END
-miniEND
-a : 1	b : 3
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 2	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 3
-a_len : 7	b_len : 3
-a : 1	b : 2
-PB
-	>>>>>pb : 140735638433321
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 2
-a[2] : 8	b[2] : 1
-a[1] : 9	b[1] : 4
-a[0] : 10	b[0] : 3
-a_len : 6	b_len : 4
-a : 0	b : 2
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 3
-a[2] : 8	b[2] : 2
-a[1] : 9	b[1] : 1
-a[0] : 10	b[0] : 4
-a_len : 6	b_len : 4
-a : 0	b : 1
-RRB
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 0	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 4
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 2
-a[0] : 10	b[0] : 1
-a_len : 6	b_len : 4
-hard END
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 0	b[7] : 0
-a[6] : 4	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 3
-a[1] : 9	b[1] : 2
-a[0] : 10	b[0] : 1
-a_len : 7	b_len : 3
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 0	b[8] : 0
-a[7] : 3	b[7] : 0
-a[6] : 4	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 0
-a[1] : 9	b[1] : 2
-a[0] : 10	b[0] : 1
-a_len : 8	b_len : 2
-PA
-<<<command>>>
-a[9] : 0	b[9] : 0
-a[8] : 2	b[8] : 0
-a[7] : 3	b[7] : 0
-a[6] : 4	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 0
-a[1] : 9	b[1] : 0
-a[0] : 10	b[0] : 1
-a_len : 9	b_len : 1
-PA
-<<<command>>>
-a[9] : 1	b[9] : 0
-a[8] : 2	b[8] : 0
-a[7] : 3	b[7] : 0
-a[6] : 4	b[6] : 0
-a[5] : 5	b[5] : 0
-a[4] : 6	b[4] : 0
-a[3] : 7	b[3] : 0
-a[2] : 8	b[2] : 0
-a[1] : 9	b[1] : 0
-a[0] : 10	b[0] : 0
-a_len : 10	b_len : 0
+pa

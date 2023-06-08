@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/08 22:50:25 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/08 22:52:20 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	a_stack_sort(t_stack *stack, size_t num)
 			}
 		}
 	}
-	sort_rr(stack, &info);
+	sort_rr(stack, &info, num);
 	a_stack_sort(stack, info.ra);
 	b_stack_sort(stack, info.rb);
 	b_stack_sort(stack, info.pb - info.rb);
@@ -94,7 +94,7 @@ void	b_stack_sort(t_stack *stack, size_t num)
 		}
 	}
 	a_stack_sort(stack, info.pa - info.ra);
-	sort_rr(stack, &info);
+	sort_rr(stack, &info, num);
 	a_stack_sort(stack, info.ra);
 	b_stack_sort(stack, info.rb);
 }

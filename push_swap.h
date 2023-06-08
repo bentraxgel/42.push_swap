@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 21:39:26 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/08 22:52:48 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		duplicate_check(int *arr, size_t len);
 void	lst_del(t_list *lst);
 void	*alloc_guard(size_t typesize, size_t count);
 void	q_sort(int *arr, int left, int right);
-int	exception(char *str);
+int		exception(char *str);
 
 //ft_atoi_pro.c
 int		ft_isspace_pro(int c);
@@ -87,7 +87,7 @@ void	b_stack_sort(t_stack *stack, size_t num);
 
 //sort_utill.c
 void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag);
-void	sort_rr(t_stack *stack, t_info *info);
+void	sort_rr(t_stack *stack, t_info *info, size_t num);
 int		*ft_subnum(int *arr, size_t start, size_t num);
 
 //hard_sort.c
