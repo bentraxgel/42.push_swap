@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hard_sort2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/04 18:49:39 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 20:56:31 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,11 @@ void	b_large_only(t_stack *stack, size_t num)
 	mini_sort(stack, &hard, STACK_B, hard.b);
 	while (hard.a + hard.b > 0)
 	{
+	printf("a : %zu\tb : %zu\n", hard.a, hard.b);
 		if (hard.a == 0)
-			hard.a -= command(PB, stack, &hard);
-		else if (hard.b == 0)
 			hard.b -= command(RRB, stack, &hard);
+		else if (hard.b == 0)
+			hard.a -= command(PB, stack, &hard);
 		else if (stack->a[stack->a_len - 1] < stack->b[0])
 			hard.a -= command(PB, stack, &hard);
 		else if (stack->a[stack->a_len - 1] > stack->b[0])
@@ -103,5 +104,5 @@ void	b_large_another(t_stack *stack, size_t num)
 	mini_sort(stack, &hard, STACK_A, hard.a);
 	mini_sort(stack, &hard, STACK_B, hard.b);
 	while (hard.a > 0)
-		command(PB, stack, &hard);
+		hard.a -= command(PB, stack, &hard);
 }

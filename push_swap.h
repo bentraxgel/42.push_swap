@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 04:03:33 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 21:39:26 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ typedef struct s_stack
 
 typedef struct s_info
 {
-	size_t	p0;
-	size_t	p1;
-	size_t	p2;
+	int		p0;
+	int		p1;
+	int		p2;
 	size_t	ra;
 	size_t	rb;
 	size_t	pa;
@@ -65,8 +65,8 @@ void	parsing(t_stack *stack, char **argv);
 //main_utill.c
 int		my_error();
 void	stack_indexing(t_stack *stack, size_t start, size_t len);
-int		a_sort_check(int *arr, size_t len);
-int		b_sort_check(int *arr, size_t len);
+int		a_sort_check(int *arr, size_t start, size_t len);
+int		b_sort_check(int *arr, size_t start, size_t len);
 int		duplicate_check(int *arr, size_t len);
 
 //tools
@@ -130,6 +130,7 @@ void	p_command(t_stack *stack, t_info *info, t_set flag);
 void	s_command(t_stack *stack, t_set flag);
 
 //print.c
+t_list	*another_print(t_list *command);
 t_list	*r_print(t_list *command);
 t_list	*rr_print(t_list *command);
 t_list	*s_print(t_list *command);

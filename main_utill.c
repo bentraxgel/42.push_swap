@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main_utill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 14:36:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/06 14:47:26 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 19:11:11 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
 
 int	my_error(void)
 {
@@ -44,15 +43,15 @@ void	stack_indexing(t_stack *stack, size_t start, size_t len)
 	free(tmp);
 }
 
-int	a_sort_check(int *arr, size_t len)
+int	a_sort_check(int *arr, size_t start, size_t len)
 {
 	printf("a_sort_check\n");
 	size_t	i;
 
-	i = 1;
-	while (i < len)
+	i = 0;
+	while (i < len - 1)
 	{
-		if (arr[len - i] + 1 == arr[len - i - 1])
+		if (arr[start + i] == arr[start + i + 1] + 1)
 			i++;
 		else
 			return (false);
@@ -61,15 +60,15 @@ int	a_sort_check(int *arr, size_t len)
 	return (true);
 }
 
-int	b_sort_check(int *arr, size_t len)
+int	b_sort_check(int *arr, size_t start, size_t len)
 {
 	printf("b_sort_check\n");
 	size_t	i;
 
 	i = 0;
-	while (i + 1 < len)
+	while (i < len - 1)
 	{
-		if (arr[i] + 1 == arr[i + 1])
+		if (arr[start + i] + 1 == arr[start + i + 1])
 			i++;
 		else
 			return (false);

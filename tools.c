@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 18:05:40 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 04:08:42 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 18:16:58 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	exception(char *str)
 		ret += ft_isdigit(str[i++]);
 	return (ret);
 }
-// /*
+/*
 void	q_sort(int *arr, int left, int right)
 {
 	int	tmp;
@@ -80,8 +80,8 @@ void	q_sort(int *arr, int left, int right)
 	if (high > left)
 		q_sort(arr, low, right);
 }
-// */
-/*
+*/
+// /*
 void q_sort(int arr[], int L, int R) {
       int left = L, right = R;
       int pivot = arr[(L + R) / 2];    // pivot 설정 (가운데) 
@@ -110,4 +110,4 @@ void q_sort(int arr[], int L, int R) {
     if (left < R)
         q_sort(arr, left, R);    // 오른쪽 배열 재귀적으로 반복 
 }
-*/
+// */

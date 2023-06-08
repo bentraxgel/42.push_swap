@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   hard_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 00:32:52 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 19:46:17 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/08 20:27:23 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	b_three_only(t_stack *stack, t_info *info, size_t top)
 	else if (stack->b[top] < stack->b[top - 1] \
 			&& stack->b[top] > stack->b[top - 2])
 		command(SB, stack, info);
+	printf("only END\n");
 }
 
 void	b_three_another(t_stack *stack, t_info *info, size_t top)
@@ -110,4 +111,5 @@ void	b_three_another(t_stack *stack, t_info *info, size_t top)
 	else if (stack->b[top] < stack->b[top - 1] \
 			&& stack->b[top] > stack->b[top - 2])
 		b_fifth_case(stack, info);
+
 }

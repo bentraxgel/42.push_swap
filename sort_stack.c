@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/08 05:07:13 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 22:50:25 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	a_stack_sort(t_stack *stack, size_t num)
 {
+		printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
+		printf("num : %zu\n", num);
 	size_t	i;
-	size_t	target;
+	int		target;
 	t_info	info;
 
-	if (a_sort_check(stack->a, stack->a_len) == true)
+	if (a_sort_check(stack->a, stack->a_len - num, num) == true)
 		return ;
 	if (num <= 6)
 	{
@@ -36,29 +38,41 @@ void	a_stack_sort(t_stack *stack, size_t num)
 		{
 			command(PB, stack, &info);
 			if (target > info.p1)
+			{
 				command(RB, stack, &info);
+				if (stack->b_len == 1)
+					info.rb++;
+			}
 		}
 	}
 	sort_rr(stack, &info);
-	printf("\t1^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	a_stack_sort(stack, info.ra);
-	printf("\t2^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	b_stack_sort(stack, info.rb);
-	printf("\t3^ pb : %zu\trb : %zu = %zu\n", info.pb, info.rb, info.pb - info.rb);
 	b_stack_sort(stack, info.pb - info.rb);
 }
 
 void	b_stack_sort(t_stack *stack, size_t num)
 {
+	printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
+	printf("num : %zu\n", num);
 	size_t	i;
-	size_t	target;
+	int		target;
 	t_info	info;
 
-	if (b_sort_check(stack->b, stack->b_len) == true)
+	if (b_sort_check(stack->b, stack->b_len - num, num) == true)
+	{
+		while (num--)
+			command(PA, stack, &info);
+		printf("b_check : END\n");
 		return ;
+	}
 	if (num <= 6)
 	{
+		printf("b_mini\n");
 		hard_sort(stack, STACK_B, num);
+		printf("hard END\n");
+		while (num--)
+			command(PA, stack, &info);
 		return ;
 	}
 	two_pivot(stack, &info, num, STACK_B);
@@ -72,7 +86,11 @@ void	b_stack_sort(t_stack *stack, size_t num)
 		{
 			command(PA, stack, &info);
 			if (target <= info.p2)
+			{
 				command(RA, stack, &info);
+				if (stack->a_len == 1)
+					info.ra++;
+			}
 		}
 	}
 	a_stack_sort(stack, info.pa - info.ra);

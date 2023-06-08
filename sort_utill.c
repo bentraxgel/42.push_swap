@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/08 03:36:37 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 22:50:49 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 	else
 		arr = ft_subnum(stack->b, stack->b_len - num, num);
 	q_sort(arr, 0, num - 1);
-	for(int i = 0; i < num; i++)
-		printf("arr[%d] : %d\n", i, arr[i]);
+	for(size_t i = 0; i < num; i++)
+		printf("arr[%zu] : %d\n", i, arr[i]);
 	info->p1 = arr[num / 3];
 	info->p2 = arr[num / 3 * 2];
 	info->ra = 0;
@@ -30,20 +30,21 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 	info->pa = 0;
 	info->pb = 0;
 	printf("[p1] : %lu\t[p2] : %lu\n", num / 3, num / 3 * 2);
-	printf("p1 : %zu\tp2 : %zu\n", info->p1, info->p2);
+	printf("p1 : %d\tp2 : %d\n", info->p1, info->p2);
 	free(arr);
 }
 
 void	sort_rr(t_stack *stack, t_info *info)
 {
-	// printf("sort_rr\n");
+	printf("sort_rr\n");
 	size_t	i;
 
-	i = -1;
-	while (++i < info->ra && i < info->rb)
+	i = 0;
+	while (i < info->ra && i < info->rb)
 	{
 		command(RRA, stack, info);
 		command(RRB, stack, info);
+		++i;
 	}
 	while (i < info->ra)
 	{
@@ -67,7 +68,10 @@ int	*ft_subnum(int *arr, size_t start, size_t num)
 	while (++i < num)
 		temp[i] = arr[start + i];
 		printf(">>>  >>  subnum\n");
-	for(int i = 0; i < num; i++)
-		printf("temp[%d] : %d\t%d\n", i, temp[i], arr[start + i]);
+	for(size_t i = 0; i < num; i++)
+		printf("temp[%zu] : %d\t%d\n", i, temp[i], arr[start + i]);
 	return (temp);
 }
+
+//[p1] : 6	[p2] : 12
+// p1 : 7	p2 : 13

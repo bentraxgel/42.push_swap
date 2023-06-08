@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_sort_utill.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quesera <quesera@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 23:14:53 by seok              #+#    #+#             */
-/*   Updated: 2023/06/03 10:49:39 by quesera          ###   ########.fr       */
+/*   Updated: 2023/06/08 19:48:04 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	hard_a_only(t_stack *stack, t_info *info, size_t num)
 
 void	hard_a_another(t_stack *stack, t_info *info, size_t num)
 {
-	printf("hard_a_another\n");
+	printf("error hard_a_another\n");
 	mini_pivot(stack, info, STACK_A, num);
 	// info->b = num - 3;
 	// while (info->a < 3 && info->b > 0)
