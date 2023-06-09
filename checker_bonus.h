@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:51:02 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 02:36:15 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 06:23:55 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		my_save_buf(t_lst *find, char **ret, int check);
 t_lst	*my_lst_find(t_lst **head, int f_fd);
 void	my_lst_free(t_lst *find, t_lst *head);
 t_lst	*my_lst_make(t_lst **head);
+char	*gnl_substr(char *s, unsigned int start, size_t len);
 
 
 //command_bonus.c

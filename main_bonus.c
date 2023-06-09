@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:49:51 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 06:18:33 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 06:23:43 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,42 @@ void	leaks()
 
 #include <stdio.h>
 
+char	*gnl_substr(char *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	sstart;
+	size_t	i;
+	size_t	s_len;
+
+	i = 0;
+	sstart = (size_t)start;
+	s_len = ft_strlen(s);
+	if (s_len <= sstart)
+		return (NULL);
+	if (s_len - start <= len)
+		str = (char *)malloc(sizeof(char) * (s_len - start + 1));
+	if (s_len - start > len)
+		str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	while (s[sstart + i] && i < len)
+	{
+		str[i] = s[sstart + i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
+
 int	main(int argc, char *argv[])
 {
 	atexit(leaks);
 	// t_stack	stack;
 	// t_stack *stack;
 	//stack = (t_stack *)malloc()
-	stack.command = (t_list *)malloc();
-	stack.command[0] = 'r'
-	memset(&stack);
+	// stack.command = (t_list *)malloc();
+	// stack.command[0] = 'r'
+	// memset(&stack);
 	// another func == stack->a
 	// t_info	info;
 	// char	buf[10];
@@ -188,8 +215,8 @@ int	my_save_buf(t_lst *find, char **ret, int check)
 	{
 		if (find->save[idx] == '\n')
 		{
-			*ret = ft_substr(find->save, 0, idx + 1);
-			temp = ft_substr(find->save, idx + 1, \
+			*ret = gnl_substr(find->save, 0, idx + 1);
+			temp = gnl_substr(find->save, idx + 1, \
 							ft_strlen(find->save) - (idx + 1));
 			free(find->save);
 			find->save = temp;
@@ -218,7 +245,7 @@ char	*my_save_check(int fd, t_lst **head)
 		}
 		else if (check == 0 && find->save != 0)
 		{
-			ret = ft_substr(find->save, 0, ft_strlen(find->save));
+			ret = gnl_substr(find->save, 0, ft_strlen(find->save));
 			my_lst_free(find, *head);
 			return (ret);
 		}
