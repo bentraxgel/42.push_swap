@@ -14,20 +14,20 @@ INCD_B = checker.h
 SRC_B = command_bonus.c ft_atoi_pro_bonus.c main_bonus.c\
 		main_utill_bonus.c parsing_bonus.c tools_bonus.c
 OBJ_B = $(SRC_B:.c=.o)
-B_DIR = ./bonus/
+# B_DIR = ./bonus/
 
 $(NAME) : $(OBJS)
 	make -C $(LIBDIR) all
 	$(CC) $(OBJS) -L $(LIBDIR) -l ft -o $(NAME)
 
-$(BONUS) : bonus/*.c
-	make -C $(LIBDIR) all
-	$(CC) $(CFLAGS) $^ -o $@
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-# $(BONUS) : $(OBJ_B)
+# $(BONUS) : bonus/*.c
 # 	make -C $(LIBDIR) all
-# 	$(CC) $(OBJ_B) -L $(LIBDIR) -l ft -o $(BONUS)
+# 	$(CC) $(CFLAGS) $^ -o $@
+# %.o: %.c
+# 	$(CC) $(CFLAGS) -c $< -o $@
+$(BONUS) : $(OBJ_B)
+	make -C $(LIBDIR) all
+	$(CC) $(OBJ_B) -L $(LIBDIR) -l ft -o $(BONUS)
 
 all : $(NAME)
 bonus : $(BONUS)
