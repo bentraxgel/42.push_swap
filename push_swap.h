@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 22:52:48 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/09 20:55:55 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct s_info
 	size_t	b;
 } t_info;
 void q_sort(int arr[], int L, int R);
-//main.c
+//parsing.c
 char	*join_argv(char **argv);
 void	parsing(t_stack *stack, char **argv);
 

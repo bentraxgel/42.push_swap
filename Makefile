@@ -3,24 +3,39 @@ CFLAGS = -Wall -Wextra -Werror -g
 ARFLAGS = rc
 NAME = push_swap
 INCD = push_swap.h
-SRCD = main.c main_utill.c tools.c ft_atoi_pro.c command.c\
+SRCD = main.c main_utill.c parsing.c tools.c ft_atoi_pro.c command.c\
 		sort_stack.c sort_utill.c hard_sort.c hard_sort2.c hard_three.c\
 		sort_a_case.c sort_b_case.c print.c
 OBJS = $(SRCD:.c=.o)
 LIBDIR = ./libft/
 
+BONUS = checker
+INCD_B = checker.h
+SRC_B = command_bonus.c ft_atoi_pro_bonus.c main_bonus.c\
+		main_utill_bonus.c parsing_bonus.c tools_bonus.c
+OBJ_B = $(SRC_B:.c=.o)
+B_DIR = ./bonus/
+
 $(NAME) : $(OBJS)
 	make -C $(LIBDIR) all
 	$(CC) $(OBJS) -L $(LIBDIR) -l ft -o $(NAME)
-# cp $(LIBDIR)libft.a ./$(NAME)
-# ar $(ARFLAGS) $(NAME) $(OBJS)
+
+$(BONUS) : bonus/*.c
+	make -C $(LIBDIR) all
+	$(CC) $(CFLAGS) $^ -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+# $(BONUS) : $(OBJ_B)
+# 	make -C $(LIBDIR) all
+# 	$(CC) $(OBJ_B) -L $(LIBDIR) -l ft -o $(BONUS)
 
 all : $(NAME)
+bonus : $(BONUS)
 clean :
 	make -C $(LIBDIR) clean
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJ_B)
 fclean : clean
 	make -C $(LIBDIR) fclean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(BONUS)
 re : fclean all
 .PHONY : all clean fclean re
