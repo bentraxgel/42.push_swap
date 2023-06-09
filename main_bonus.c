@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:49:51 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 03:15:21 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 06:18:33 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check_command(char *buf, t_stack *stack, t_info *info)
 		free(buf);
 		my_error();
 	}
-	free(buf);
+	// free(buf);
 }
 
 void	free_exit(t_stack *stack)
@@ -68,34 +68,51 @@ void	leaks()
 	system("leaks --list checker");
 }
 
+#include <stdio.h>
+
 int	main(int argc, char *argv[])
 {
 	atexit(leaks);
-	t_stack	stack;
-	t_info	info;
+	// t_stack	stack;
+	// t_stack *stack;
+	//stack = (t_stack *)malloc()
+	stack.command = (t_list *)malloc();
+	stack.command[0] = 'r'
+	memset(&stack);
+	// another func == stack->a
+	// t_info	info;
 	// char	buf[10];
 	char	*str;
 
 	if (argc == 1)
 		return (0);
-	parsing(&stack, argv);
+	// parsing(&stack, argv);
+	// stack.command = ft_lstnew("start\n");
+	(void)argv;
 	while (1)
 	{
 		// ft_memset(buf, 0, 10);
 		str = get_next_line(0);
-		if (ft_strlen(str) > 0)
+		if (ft_strlen(str) == 0)
 		{
-			check_command(str, &stack, &info);
 			free(str);
+			return (0);
 		}
-		else
-		{
-			if (a_sort_check(stack.a, 0, stack.a_len) == true && stack.b_len == 0)
-				ft_putstr_fd("OK\n", STDOUT_FILENO);
-			else
-				ft_putstr_fd("KO\n", STDOUT_FILENO);
-			free_exit(&stack);
-		}
+		printf("str %s\n", str);
+		free(str);
+		// if (ft_strlen(str) > 0)
+		// {
+		// 	check_command(str, &stack, &info);
+		// 	free(str);
+		// } 
+		// else
+		// {
+		// 	if (a_sort_check(stack.a, 0, stack.a_len) == true && stack.b_len == 0)
+		// 		ft_putstr_fd("OK\n", STDOUT_FILENO);
+		// 	else
+		// 		ft_putstr_fd("KO\n", STDOUT_FILENO);
+		// 	free_exit(&stack);
+		// }
 		// free(str);
 	}
 	return (0);
