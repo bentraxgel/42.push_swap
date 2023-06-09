@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:44:07 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 20:25:25 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:48:18 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	hard_sort(t_stack *stack, t_set flag, size_t num)
 {
-	printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
 	t_info	hard;
 
 	if (num <= 3)
@@ -40,7 +39,6 @@ void	hard_sort(t_stack *stack, t_set flag, size_t num)
 
 void	mini_sort(t_stack *stack, t_info *hard, size_t flag, size_t num)
 {
-	printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
 	if (num == 1)
 		return ;
 	else if (num == 2)
@@ -66,12 +64,10 @@ void	mini_sort(t_stack *stack, t_info *hard, size_t flag, size_t num)
 				b_three_another(stack, hard, stack->b_len - 1);
 		}
 	}
-	printf("miniEND\n");
 }
 
 void	two_sort(t_stack *stack, t_info *hard, t_set flag)
 {
-	printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
 	if (flag == STACK_A)
 	{
 		if (stack->a[stack->a_len - 1] < stack->a[stack->a_len - 2])
@@ -90,7 +86,6 @@ void	two_sort(t_stack *stack, t_info *hard, t_set flag)
 
 void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag)
 {
-	printf("[%s:%d][%s]\n", __FILE__, __LINE__, __func__);
 	int	*arr;
 
 	if (flag == STACK_A)

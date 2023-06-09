@@ -6,13 +6,11 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:15 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 21:51:33 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:49:40 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
-#include <stdio.h> //TODO : 지워야징
 
 void	ft_leaks()
 {

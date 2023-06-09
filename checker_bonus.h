@@ -6,14 +6,35 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:51:02 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 23:41:01 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 02:36:15 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CHECKER_H
-# define CHECKER_H
+#ifndef	CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-#include "push_swap.h"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# include "push_swap.h"
+
+typedef struct s_lst
+{
+	int				fd;
+	char			buf[BUFFER_SIZE + 1];
+	char			*save;
+	struct s_lst	*next;
+}t_lst;
+
+//get_next_line.c
+char	*get_next_line(int fd);
+char	*my_save_check(int fd, t_lst **head);
+int		my_save_buf(t_lst *find, char **ret, int check);
+t_lst	*my_lst_find(t_lst **head, int f_fd);
+void	my_lst_free(t_lst *find, t_lst *head);
+t_lst	*my_lst_make(t_lst **head);
+
 
 //command_bonus.c
 int		command(t_cmd cmd, t_stack *stack, t_info *info);

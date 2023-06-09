@@ -1,6 +1,9 @@
 {
 	"files.associations": {
 		"libft.h": "c",
-		"exception": "c"
+		"exception": "c",
+		"stdio.h": "c",
+		"push_swap.h": "c",
+		"sstream": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:55:10 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 23:25:10 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 01:02:43 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,11 @@ void	parsing(t_stack *stack, char **argv)
 
 	i = 0;
 	arg = join_argv(argv);
-	printf("%s\n", arg);
 	word = ft_split(arg, ' ');
 	free(arg);
 	while (word[i])
 		i++;
 	stack->a_len = i;
-	stack->total_len = i; //TODO DEL
 	stack->b_len = 0;
 	stack->a = (int *)alloc_guard(sizeof(int), stack->a_len);
 	i = -1;

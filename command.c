@@ -6,20 +6,11 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 06:03:10 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 21:49:47 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:47:42 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_func(t_stack *stack)
-{
-	printf("<<<command>>>\n"); //TODO del_print
-	for (int i = stack->total_len - 1; i >= 0; i--)
-		printf("a[%d] : %d\tb[%d] : %d\n", i, stack->a[i], i, stack->b[i]);
-	printf("a_len : %zu\tb_len : %zu\n", stack->a_len, stack->b_len);
-
-}
 
 int	command(t_cmd cmd, t_stack *stack, t_info *info)
 {
@@ -41,7 +32,6 @@ int	command(t_cmd cmd, t_stack *stack, t_info *info)
 		s_command(stack, STACK_B);
 	else
 		return (0);
-	
 	return (1);
 }
 
@@ -107,7 +97,6 @@ void	p_command(t_stack *stack, t_info *info, t_set flag)
 		ft_lstadd_back(&stack->command, ft_lstnew("pb\n"));
 		info->pb++;
 	}
-
 	else if (flag == STACK_A && stack->b_len > 0)
 	{
 		tmp = stack->b[stack->b_len - 1];
@@ -118,7 +107,6 @@ void	p_command(t_stack *stack, t_info *info, t_set flag)
 		ft_lstadd_back(&stack->command, ft_lstnew("pa\n"));
 		info->pa++;
 	}
-
 }
 
 void	s_command(t_stack *stack, t_set flag)
@@ -132,7 +120,6 @@ void	s_command(t_stack *stack, t_set flag)
 		stack->a[stack->a_len - 2] = tmp;
 		ft_lstadd_back(&stack->command, ft_lstnew("sa\n"));
 	}
-
 	else if (flag == STACK_B && stack->b_len > 1)
 	{
 		tmp = stack->b[stack->b_len - 1];
@@ -140,5 +127,4 @@ void	s_command(t_stack *stack, t_set flag)
 		stack->b[stack->b_len - 2] = tmp;
 		ft_lstadd_back(&stack->command, ft_lstnew("sb\n"));
 	}
-
 }

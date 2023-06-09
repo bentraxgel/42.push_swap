@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:55:10 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 23:25:10 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 01:52:11 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	parsing(t_stack *stack, char **argv)
 	while (word[i])
 		i++;
 	stack->a_len = i;
-	stack->total_len = i; //TODO DEL
 	stack->b_len = 0;
 	stack->a = (int *)alloc_guard(sizeof(int), stack->a_len);
 	i = -1;

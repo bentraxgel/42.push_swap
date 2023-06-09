@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 09:06:06 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 22:50:24 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:50:30 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_list	*rr_print(t_list *command)
 	if (command->next != 0)
 	{
 		if (ft_strncmp(command->content, "rra\n", 4) == 0 \
-			&& ft_strncmp(command->next->content, "rrb\n", 4)== 0)
+			&& ft_strncmp(command->next->content, "rrb\n", 4) == 0)
 		{
 			ft_putstr_fd("rrr\n", STDOUT_FILENO);
 			command = command->next;

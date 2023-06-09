@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/08 22:52:10 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 01:00:41 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,17 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 	else
 		arr = ft_subnum(stack->b, stack->b_len - num, num);
 	q_sort(arr, 0, num - 1);
-	for(size_t i = 0; i < num; i++)
-		printf("arr[%zu] : %d\n", i, arr[i]);
 	info->p1 = arr[num / 3];
 	info->p2 = arr[num / 3 * 2];
 	info->ra = 0;
 	info->rb = 0;
 	info->pa = 0;
 	info->pb = 0;
-	printf("[p1] : %lu\t[p2] : %lu\n", num / 3, num / 3 * 2);
-	printf("p1 : %d\tp2 : %d\n", info->p1, info->p2);
 	free(arr);
 }
 
 void	sort_rr(t_stack *stack, t_info *info, size_t num)
 {
-	printf("sort_rr\n");
 	size_t	i;
 
 	i = 0;
@@ -67,9 +62,6 @@ int	*ft_subnum(int *arr, size_t start, size_t num)
 	temp = (int *)malloc(sizeof(int) * num);
 	while (++i < num)
 		temp[i] = arr[start + i];
-		printf(">>>  >>  subnum\n");
-	for(size_t i = 0; i < num; i++)
-		printf("temp[%zu] : %d\t%d\n", i, temp[i], arr[start + i]);
 	return (temp);
 }
 

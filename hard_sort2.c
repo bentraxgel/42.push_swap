@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 20:56:31 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:48:37 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	b_large_only(t_stack *stack, size_t num)
 	mini_sort(stack, &hard, STACK_B, hard.b);
 	while (hard.a + hard.b > 0)
 	{
-	printf("a : %zu\tb : %zu\n", hard.a, hard.b);
 		if (hard.a == 0)
 			hard.b -= command(RRB, stack, &hard);
 		else if (hard.b == 0)

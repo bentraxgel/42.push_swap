@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 00:32:52 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 20:27:23 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:48:56 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	a_three_only(t_stack *stack, t_info *info, size_t top)
 {
-	printf("\n\ta_three_only\n");
 	if (stack->a[top] > stack->a[top - 1] && stack->a[top] > stack->a[top - 2] \
 		&& stack->a[top - 1] < stack->a[top - 2])
 		command(RA, stack, info);
@@ -42,7 +41,6 @@ void	a_three_only(t_stack *stack, t_info *info, size_t top)
 
 void	a_three_another(t_stack *stack, t_info *info, size_t top)
 {
-	printf("\n\ta_three_another\n");
 	if (stack->a[top] > stack->a[top - 1] && stack->a[top] > stack->a[top - 2] \
 		&& stack->a[top - 1] < stack->a[top - 2])
 		a_first_case(stack, info);
@@ -64,7 +62,6 @@ void	a_three_another(t_stack *stack, t_info *info, size_t top)
 
 void	b_three_only(t_stack *stack, t_info *info, size_t top)
 {
-	printf("\n\tb_three_only\n");
 	if (stack->b[top] < stack->b[top - 1] && stack->b[top] < stack->b[top - 2] \
 		&& stack->b[top - 1] < stack->b[top - 2])
 	{
@@ -88,12 +85,10 @@ void	b_three_only(t_stack *stack, t_info *info, size_t top)
 	else if (stack->b[top] < stack->b[top - 1] \
 			&& stack->b[top] > stack->b[top - 2])
 		command(SB, stack, info);
-	printf("only END\n");
 }
 
 void	b_three_another(t_stack *stack, t_info *info, size_t top)
 {
-	printf("\n\tb_three_another\n");
 	if (stack->b[top] < stack->b[top - 1] && stack->b[top] < stack->b[top - 2] \
 		&& stack->b[top - 1] < stack->b[top - 2])
 		b_first_case(stack, info);
@@ -111,5 +106,4 @@ void	b_three_another(t_stack *stack, t_info *info, size_t top)
 	else if (stack->b[top] < stack->b[top - 1] \
 			&& stack->b[top] > stack->b[top - 2])
 		b_fifth_case(stack, info);
-
 }

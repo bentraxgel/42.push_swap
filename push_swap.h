@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/09 20:55:55 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:58:35 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "libft/libft.h"
 #include <stdbool.h>
-#include <stdio.h> //TODO del
 
 typedef enum e_set
 {
@@ -33,7 +32,7 @@ typedef enum e_cmd
 	PB,
 	SA,
 	SB,
-} t_cmd;
+}t_cmd;
 
 typedef struct s_stack
 {
@@ -42,8 +41,7 @@ typedef struct s_stack
 	int			*b;
 	size_t		a_len;
 	size_t		b_len;
-	size_t		total_len; //TODO del
-} t_stack;
+}t_stack;
 
 typedef struct s_info
 {
@@ -56,14 +54,14 @@ typedef struct s_info
 	size_t	pb;
 	size_t	a;
 	size_t	b;
-} t_info;
-void q_sort(int arr[], int L, int R);
+}t_info;
+
 //parsing.c
 char	*join_argv(char **argv);
 void	parsing(t_stack *stack, char **argv);
 
 //main_utill.c
-int		my_error();
+int		my_error(void);
 void	stack_indexing(t_stack *stack, size_t start, size_t len);
 int		a_sort_check(int *arr, size_t start, size_t len);
 int		b_sort_check(int *arr, size_t start, size_t len);
@@ -72,6 +70,7 @@ int		duplicate_check(int *arr, size_t len);
 //tools
 void	lst_del(t_list *lst);
 void	*alloc_guard(size_t typesize, size_t count);
+void	q_sort(int arr[], int L, int R); //TODO del
 void	q_sort(int *arr, int left, int right);
 int		exception(char *str);
 
@@ -83,7 +82,9 @@ int		ft_atoi_pro(const char *str);
 
 //sort_stack.c
 void	a_stack_sort(t_stack *stack, size_t num);
+void	a_stack_sort2(t_stack *stack, t_info *info, size_t num);
 void	b_stack_sort(t_stack *stack, size_t num);
+void	b_stack_sort2(t_stack *stack, t_info *info, size_t num);
 
 //sort_utill.c
 void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag);
