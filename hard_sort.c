@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 19:44:07 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 00:48:18 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 08:09:48 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	hard_sort(t_stack *stack, t_set flag, size_t num)
 	{
 		if (flag == STACK_A)
 		{
-			if (stack->a_len == num)
+			if (a_sort_check(stack->a, stack->a_len - num, num) == true)
+				return ;
+			else if (stack->a_len == num)
 				a_large_only(stack, num);
 			else
 				a_large_another(stack, num);
@@ -110,4 +112,5 @@ void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag)
 	hard->rb = 0;
 	hard->pa = 0;
 	hard->pb = 0;
+	free(arr);
 }

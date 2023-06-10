@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 18:05:40 by seok              #+#    #+#             */
-/*   Updated: 2023/06/08 18:16:58 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 07:03:20 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,25 @@ int	exception(char *str)
 		ret += ft_isdigit(str[i++]);
 	return (ret);
 }
-/*
-void	q_sort(int *arr, int left, int right)
+
+void	q_swap(int *arr, int low, int high)
 {
 	int	tmp;
-	int	low = left;
-	int	high = right;
-	int	pivot = arr[(right + left) / 2];
 
+	tmp = arr[low];
+	arr[low] = arr[high];
+	arr[high] = tmp;
+}
+
+void	q_sort(int *arr, int left, int right)
+{
+	int	low;
+	int	high;
+	int	pivot;
+
+	low = left;
+	high = right;
+	pivot = arr[(right + left) / 2];
 	while (low <= high)
 	{
 		while (arr[low] < pivot)
@@ -68,46 +79,13 @@ void	q_sort(int *arr, int left, int right)
 			high--;
 		if (low <= high)
 		{
-			tmp = arr[low];
-			arr[low] = arr[high];
-			arr[high] = tmp;
+			q_swap(arr, low, high);
 			low++;
 			high--;
 		}
 	}
 	if (low < right)
-		q_sort(arr, left, high);
-	if (high > left)
 		q_sort(arr, low, right);
+	if (high > left)
+		q_sort(arr, left, high);
 }
-*/
-// /*
-void q_sort(int arr[], int L, int R) {
-      int left = L, right = R;
-      int pivot = arr[(L + R) / 2];    // pivot 설정 (가운데) 
-      int temp;
-      do
-      {
-        while (arr[left] < pivot)    // left가 pivot보다 큰 값을 만나거나 pivot을 만날 때까지 
-            left++;
-        while (arr[right] > pivot)    // right가 pivot보다 작은 값을 만나거나 pivot을 만날 때까지 
-            right--;
-        if (left<= right)    // left가 right보다 왼쪽에 있다면 교환 
-        {
-            temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            // left 오른쪽으로 한칸, right 왼쪽으로 한칸 이동
-            left++;
-            right--;
-        }
-      } while (left<= right);    // left가 right 보다 오른쪽에 있을 때까지 반복 
- 
-    //  recursion 
-    if (L < right)
-        q_sort(arr, L, right);    // 왼쪽 배열 재귀적으로 반복 
- 
-    if (left < R)
-        q_sort(arr, left, R);    // 오른쪽 배열 재귀적으로 반복 
-}
-// */

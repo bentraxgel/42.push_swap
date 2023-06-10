@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 06:03:10 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 00:46:28 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 07:12:37 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	r_command(t_stack *stack, t_info *info, t_set flag, size_t len)
 		while (--len)
 			stack->a[len] = stack->a[len - 1];
 		stack->a[len] = va_top;
-		ft_lstadd_back(&stack->command, ft_lstnew("ra\n"));
 		info->ra++;
 	}
 	else if (flag == STACK_B && stack->b_len > 1)
@@ -54,7 +53,6 @@ void	r_command(t_stack *stack, t_info *info, t_set flag, size_t len)
 		while (--len)
 			stack->b[len] = stack->b[len - 1];
 		stack->b[len] = va_top;
-		ft_lstadd_back(&stack->command, ft_lstnew("rb\n"));
 		info->rb++;
 	}
 }
@@ -71,7 +69,6 @@ void	rr_command(t_stack *stack, t_set flag, size_t top)
 		while (++i < top)
 			stack->a[i] = stack->a[i + 1];
 		stack->a[i] = va_bottom;
-		ft_lstadd_back(&stack->command, ft_lstnew("rra\n"));
 	}
 	else if (flag == STACK_B && stack->b_len > 1)
 	{
@@ -79,7 +76,6 @@ void	rr_command(t_stack *stack, t_set flag, size_t top)
 		while (++i < top)
 			stack->b[i] = stack->b[i + 1];
 		stack->b[i] = va_bottom;
-		ft_lstadd_back(&stack->command, ft_lstnew("rrb\n"));
 	}
 }
 
@@ -94,7 +90,6 @@ void	p_command(t_stack *stack, t_info *info, t_set flag)
 		stack->a_len--;
 		stack->b[stack->b_len] = tmp;
 		stack->b_len++;
-		ft_lstadd_back(&stack->command, ft_lstnew("pb\n"));
 		info->pb++;
 	}
 	else if (flag == STACK_A && stack->b_len > 0)
@@ -104,7 +99,6 @@ void	p_command(t_stack *stack, t_info *info, t_set flag)
 		stack->b_len--;
 		stack->a[stack->a_len] = tmp;
 		stack->a_len++;
-		ft_lstadd_back(&stack->command, ft_lstnew("pa\n"));
 		info->pa++;
 	}
 }
@@ -118,13 +112,11 @@ void	s_command(t_stack *stack, t_set flag)
 		tmp = stack->a[stack->a_len - 1];
 		stack->a[stack->a_len -1] = stack->a[stack->a_len -2];
 		stack->a[stack->a_len - 2] = tmp;
-		ft_lstadd_back(&stack->command, ft_lstnew("sa\n"));
 	}
 	else if (flag == STACK_B && stack->b_len > 1)
 	{
 		tmp = stack->b[stack->b_len - 1];
 		stack->b[stack->b_len -1] = stack->b[stack->b_len -2];
 		stack->b[stack->b_len - 2] = tmp;
-		ft_lstadd_back(&stack->command, ft_lstnew("sb\n"));
 	}
 }

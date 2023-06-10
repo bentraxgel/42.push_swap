@@ -6,15 +6,15 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 05:53:45 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 09:48:17 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft/libft.h"
-#include <stdbool.h>
+# include "libft/libft.h"
+# include <stdbool.h>
 
 typedef enum e_set
 {
@@ -74,7 +74,7 @@ int		duplicate_check(int *arr, size_t len);
 //tools
 void	lst_del(t_list *lst);
 void	*alloc_guard(size_t typesize, size_t count);
-void	q_sort(int arr[], int L, int R); //TODO del
+void	q_swap(int *arr, int low, int high);
 void	q_sort(int *arr, int left, int right);
 int		exception(char *str);
 
@@ -92,7 +92,7 @@ void	b_stack_sort2(t_stack *stack, t_info *info, size_t num);
 
 //sort_utill.c
 void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag);
-void	sort_rr(t_stack *stack, t_info *info, size_t num);
+void	sort_rr(t_stack *stack, t_info *info);
 int		*ft_subnum(int *arr, size_t start, size_t num);
 
 //hard_sort.c
@@ -102,6 +102,7 @@ void	two_sort(t_stack *stack, t_info *hard, t_set flag);
 void	one_pivot(t_stack *stack, t_info *hard, size_t num, t_set flag);
 
 //hard_sort2.c
+int		hard_check(t_stack *stack, t_info *hard);
 void	a_large_only(t_stack *stack, size_t num);
 void	a_large_another(t_stack *stack, size_t num);
 void	b_large_only(t_stack *stack, size_t num);

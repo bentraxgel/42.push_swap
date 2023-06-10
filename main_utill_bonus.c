@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 14:36:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 01:02:29 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 07:09:27 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	stack_indexing(t_stack *stack, size_t start, size_t len)
 
 	i = 0;
 	tmp = alloc_guard(sizeof(int), len + 1);
-	while(i < len)
+	while (i < len)
 	{
 		j = 0;
 		while (j < len)
@@ -82,10 +82,10 @@ int	duplicate_check(int *arr, size_t len)
 	while (i < len)
 	{
 		j = i + 1;
-		while(j < len)
+		while (j < len)
 		{
 			if (arr[i] == arr[j])
-				return(false);
+				return (false);
 			j++;
 		}
 		i++;

@@ -6,15 +6,42 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 03:18:32 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/10 01:18:09 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 07:39:55 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker_bonus.h"
 
-t_list	*my_lst_make(t_list **head)
+char	*gnl_substr(char *s, unsigned int start, size_t len)
 {
-	(*head) = malloc(sizeof(t_list));
+	char	*str;
+	size_t	sstart;
+	size_t	i;
+	size_t	s_len;
+
+	i = 0;
+	sstart = (size_t)start;
+	s_len = ft_strlen(s);
+	if (s_len <= sstart)
+		return (NULL);
+	if (s_len - start <= len)
+		str = (char *)malloc(sizeof(char) * (s_len - start + 1));
+	if (s_len - start > len)
+		str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	while (s[sstart + i] && i < len)
+	{
+		str[i] = s[sstart + i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
+
+t_lst	*my_lst_make(t_lst **head)
+{
+	(*head) = malloc(sizeof(t_lst));
 	if (!(*head))
 		return (NULL);
 	(*head)->fd = -1;
@@ -22,10 +49,26 @@ t_list	*my_lst_make(t_list **head)
 	return (*head);
 }
 
-t_list	*my_lst_find(t_list **head, int f_fd)
+void	my_lst_free(t_lst *find, t_lst *head)
 {
-	t_list	*temp;
-	t_list	*remember;
+	t_lst	*temp;
+
+	temp = head;
+	while (temp->next != NULL && temp->next != find)
+		temp = temp->next;
+	if (head == NULL)
+		free(head);
+	if (find->save != NULL)
+		free(find->save);
+	temp->next = find->next;
+	find->next = NULL;
+	free(find);
+}
+
+t_lst	*my_lst_find(t_lst **head, int f_fd)
+{
+	t_lst	*temp;
+	t_lst	*remember;
 
 	if (*head == NULL)
 		*head = my_lst_make(head);
@@ -39,7 +82,7 @@ t_list	*my_lst_find(t_list **head, int f_fd)
 	remember = *head;
 	while ((*head)->next)
 		(*head) = (*head)->next;
-	temp = malloc(sizeof(t_list));
+	temp = malloc(sizeof(t_lst));
 	if (!temp)
 		return (NULL);
 	(*head)->next = temp;
@@ -50,7 +93,7 @@ t_list	*my_lst_find(t_list **head, int f_fd)
 	return (temp);
 }
 
-int	my_save_buf(t_list *find, char **ret, int check)
+int	my_save_buf(t_lst *find, char **ret, int check)
 {
 	char	*temp;
 	int		idx;
@@ -66,8 +109,8 @@ int	my_save_buf(t_list *find, char **ret, int check)
 	{
 		if (find->save[idx] == '\n')
 		{
-			*ret = ft_substr(find->save, 0, idx + 1);
-			temp = ft_substr(find->save, idx + 1, \
+			*ret = gnl_substr(find->save, 0, idx + 1);
+			temp = gnl_substr(find->save, idx + 1, \
 							ft_strlen(find->save) - (idx + 1));
 			free(find->save);
 			find->save = temp;
@@ -75,60 +118,4 @@ int	my_save_buf(t_list *find, char **ret, int check)
 		}
 	}
 	return (check);
-}
-
-char	*my_save_check(int fd, t_list **head)
-{
-	char		*ret;
-	int			check;
-	t_list		*find;
-
-	ret = 0;
-	check = 0;
-	find = my_lst_find(head, fd);
-	while (ret == 0)
-	{
-		check = my_save_buf(find, &ret, check);
-		if (check < 0 || (check == 0 && find->save == 0))
-		{
-			my_lst_free(find, *head);
-			return (NULL);
-		}
-		else if (check == 0 && find->save != 0)
-		{
-			ret = ft_substr(find->save, 0, ft_strlen(find->save));
-			my_lst_free(find, *head);
-			return (ret);
-		}
-	}
-	return (ret);
-}
-
-char	*get_next_line(int fd)
-{
-	static t_list	*head;
-	t_list			*find;
-	char			*ret;
-
-	if (BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
-	{
-		find = head;
-		while (find)
-		{
-			if (find->fd == fd)
-			{
-				my_lst_free(find, head);
-				return (NULL);
-			}
-			find = find->next;
-		}
-		return (0);
-	}
-	ret = my_save_check(fd, &head);
-	if (head->fd == -1 && head->next == NULL)
-	{
-		free(head);
-		head = NULL;
-	}
-	return (ret);
 }

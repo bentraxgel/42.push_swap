@@ -4,6 +4,7 @@
 		"exception": "c",
 		"stdio.h": "c",
 		"push_swap.h": "c",
-		"sstream": "c"
+		"sstream": "c",
+		"checker_bonus.h": "c"
 	}
 }

@@ -6,11 +6,31 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:14 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 00:48:37 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 09:19:31 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	hard_check(t_stack *stack, t_info *hard)
+{
+	if (stack->a[stack->a_len - 1] == stack->a[stack->a_len - 2] + 1 \
+		&& a_sort_check(stack->a, 0, stack->a_len - 2) == true)
+	{
+		command(SA, stack, hard);
+		return (true);
+	}
+	else if (stack->a[stack->a_len - 1] == stack->a[0] + 1 \
+			&& a_sort_check(stack->a, 1, stack->a_len - 2) == true)
+	{
+		if (stack->a[stack->a_len - 1] < stack->a[stack->a_len - 2])
+			command(RRA, stack, hard);
+		else
+			command(RA, stack, hard);
+		return (true);
+	}
+	return (false);
+}
 
 void	a_large_only(t_stack *stack, size_t num)
 {
@@ -20,6 +40,8 @@ void	a_large_only(t_stack *stack, size_t num)
 	hard.a = 3;
 	hard.b = num - 3;
 	i = 0;
+	if (hard_check(stack, &hard) == true)
+		return ;
 	while (i++ < hard.b)
 		command(PB, stack, &hard);
 	mini_sort(stack, &hard, STACK_A, hard.a);

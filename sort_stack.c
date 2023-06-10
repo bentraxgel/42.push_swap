@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 09:26:08 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/10 00:59:54 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 09:48:39 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	a_stack_sort(t_stack *stack, size_t num)
 	}
 	two_pivot(stack, &info, num, STACK_A);
 	a_stack_sort2(stack, &info, num);
-	sort_rr(stack, &info, num);
+	sort_rr(stack, &info);
 	a_stack_sort(stack, info.ra);
 	b_stack_sort(stack, info.rb);
 	b_stack_sort(stack, info.pb - info.rb);
@@ -75,7 +75,7 @@ void	b_stack_sort(t_stack *stack, size_t num)
 	two_pivot(stack, &info, num, STACK_B);
 	b_stack_sort2(stack, &info, num);
 	a_stack_sort(stack, info.pa - info.ra);
-	sort_rr(stack, &info, num);
+	sort_rr(stack, &info);
 	a_stack_sort(stack, info.ra);
 	b_stack_sort(stack, info.rb);
 }

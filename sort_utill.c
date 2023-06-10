@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 21:45:25 by quesera           #+#    #+#             */
-/*   Updated: 2023/06/10 01:00:41 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 09:48:31 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	two_pivot(t_stack *stack, t_info *info, size_t num, t_set flag)
 	free(arr);
 }
 
-void	sort_rr(t_stack *stack, t_info *info, size_t num)
+void	sort_rr(t_stack *stack, t_info *info)
 {
 	size_t	i;
 
@@ -41,12 +41,12 @@ void	sort_rr(t_stack *stack, t_info *info, size_t num)
 		command(RRB, stack, info);
 		++i;
 	}
-	while (stack->a_len != num && i < info->ra)
+	while (stack->a_len != info->ra && i < info->ra)
 	{
 		command(RRA, stack, info);
 		i++;
 	}
-	while (stack->b_len != num && i < info->rb)
+	while (stack->b_len != info->rb && i < info->rb)
 	{
 		command(RRB, stack, info);
 		i++;
@@ -64,6 +64,3 @@ int	*ft_subnum(int *arr, size_t start, size_t num)
 		temp[i] = arr[start + i];
 	return (temp);
 }
-
-//[p1] : 6	[p2] : 12
-// p1 : 7	p2 : 13

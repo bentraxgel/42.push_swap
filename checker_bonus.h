@@ -6,11 +6,11 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:51:02 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 06:23:55 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 07:40:42 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CHECKER_BONUS_H
+#ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
 # ifndef BUFFER_SIZE
@@ -27,15 +27,16 @@ typedef struct s_lst
 	struct s_lst	*next;
 }t_lst;
 
-//get_next_line.c
+//gnl_bonus.c
+char	*gnl_substr(char *s, unsigned int start, size_t len);
+t_lst	*my_lst_make(t_lst **head);
+void	my_lst_free(t_lst *find, t_lst *head);
+t_lst	*my_lst_find(t_lst **head, int f_fd);
+int		my_save_buf(t_lst *find, char **ret, int check);
+
+//gnl2_bonus.c
 char	*get_next_line(int fd);
 char	*my_save_check(int fd, t_lst **head);
-int		my_save_buf(t_lst *find, char **ret, int check);
-t_lst	*my_lst_find(t_lst **head, int f_fd);
-void	my_lst_free(t_lst *find, t_lst *head);
-t_lst	*my_lst_make(t_lst **head);
-char	*gnl_substr(char *s, unsigned int start, size_t len);
-
 
 //command_bonus.c
 int		command(t_cmd cmd, t_stack *stack, t_info *info);
@@ -52,7 +53,8 @@ int		ft_atoi_pro(const char *str);
 
 //main_bonus.c
 void	check_command(char *buf, t_stack *stack, t_info *info);
-void	free_exit(t_stack *stack);
+void	check_command2(char *buf, t_stack *stack, t_info *info);
+void	main_else(t_stack *stack);
 
 //main_utill_bonus.c
 int		my_error(void);
@@ -69,6 +71,7 @@ void	parsing(t_stack *stack, char **argv);
 void	lst_del(t_list *lst);
 void	*alloc_guard(size_t typesize, size_t count);
 int		exception(char *str);
-void	 q_sort(int arr[], int L, int R);
+void	q_swap(int *arr, int low, int high);
+void	q_sort(int *arr, int left, int right);
 
-# endif
+#endif

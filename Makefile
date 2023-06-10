@@ -11,8 +11,8 @@ LIBDIR = ./libft/
 
 BONUS = checker
 INCD_B = checker.h
-SRC_B = command_bonus.c ft_atoi_pro_bonus.c main_bonus.c\
-		main_utill_bonus.c parsing_bonus.c tools_bonus.c
+SRC_B = command_bonus.c ft_atoi_pro_bonus.c main_bonus.c gnl_bonus.c\
+		main_utill_bonus.c parsing_bonus.c tools_bonus.c gnl2_bonus.c
 OBJ_B = $(SRC_B:.c=.o)
 # B_DIR = ./bonus/
 
