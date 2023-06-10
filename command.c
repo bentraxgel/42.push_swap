@@ -6,12 +6,12 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 06:03:10 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 09:28:24 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 12:37:02 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+
 int	command(t_cmd cmd, t_stack *stack, t_info *info)
 {
 	if (cmd == RA)
@@ -32,10 +32,6 @@ int	command(t_cmd cmd, t_stack *stack, t_info *info)
 		s_command(stack, STACK_B);
 	else
 		return (0);
-	printf("<<<command>>>\n"); //TODO del_print
-	for (int i = 20 - 1; i >= 0; i--)
-		printf("a[%d] : %d\tb[%d] : %d\n", i, stack->a[i], i, stack->b[i]);
-	printf("a_len : %zu\tb_len : %zu\n", stack->a_len, stack->b_len);
 	return (1);
 }
 

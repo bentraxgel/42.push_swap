@@ -6,7 +6,7 @@
 /*   By: seok <seok@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:33:37 by seok              #+#    #+#             */
-/*   Updated: 2023/06/10 09:48:17 by seok             ###   ########.fr       */
+/*   Updated: 2023/06/10 12:40:15 by seok             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,6 @@ typedef struct s_stack
 	size_t		a_len;
 	size_t		b_len;
 }t_stack;
-
-// {
-// 	t_list	*head; //FPEMDHK RHFLFMF RHR VLFDYGO..@
-// }
 
 typedef struct s_info
 {
